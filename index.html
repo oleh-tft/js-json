@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <template id="template-rect">
+        <div class="rect-bg" style="background-color: {{bg}}; width: {{width}}px; height: {{height}}px">
+            <div class="color-rect" style="background-color: rgb({{rgb}});">
+                <p>{{colorName}}</p>
+                <p>{{type}}</p>
+                <p><b>{{rgb}}</b></p>
+            </div>
+        </div>
+    </template>
+    <div id="form-div">
+        <h3>Create new color</h3>
+        <form action="create-color">
+            <div>
+                <label for="width">Width:</label>
+                <input type="text" name="width" id="width" required>
+            </div>
+            <div>
+                <label for="height">Height:</label>
+                <input type="text" name="height" id="height" required>
+            </div>
+            <div>
+                <label for="color">Color name:</label>
+                <input type="text" name="color" id="color" required>
+            </div>
+            <div>
+                <label for="bg">Background:</label>
+                <input type="text" name="bg" id="bg" required>
+            </div>
+            <div>
+                <label for="type">Type:</label>
+                <select name="type" id="type"><option value="RGB">RGB</option></select>
+            </div>
+            <div class="colors">
+                <div class="color-item">
+                    <label for="r">R</label>
+                    <input type="text" name="r" id="r" required>
+                </div>
+                <div class="color-item">
+                    <label for="g">G</label>
+                    <input type="text" name="g" id="g" required>
+                </div>
+                <div class="color-item">
+                    <label for="b">B</label>
+                    <input type="text" name="b" id="b" required>
+                </div>
+            </div>
+            <button type="button" id="btn-save"><b>Save</b></button>
+        </form>
+    </div>
+
+    <h2>All colors</h2>
+
+    <div id="content">
+
+    </div>
+
+    <script src="mustache.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
